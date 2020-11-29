@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/mainFragment">
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.example.zorana.cats.fragments.MainFragment"
+        android:label="fragment_main"
+        tools:layout="@layout/fragment_main" >
+        <action
+            android:id="@+id/action_mainFragment_to_checkFragment"
+            app:destination="@id/checkFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_menuFragment"
+            app:destination="@id/menuFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/checkFragment"
+        android:name="com.example.zorana.cats.fragments.CheckFragment"
+        android:label="fragment_check"
+        tools:layout="@layout/fragment_check" >
+        <action
+            android:id="@+id/action_checkFragment_to_mainFragment"
+            app:destination="@id/mainFragment"
+            app:popUpTo="@id/mainFragment"
+            app:popUpToInclusive="true"/>
+    </fragment>
+    <fragment
+        android:id="@+id/menuFragment"
+        android:name="com.example.zorana.cats.fragments.MenuFragment"
+        android:label="fragment_menu"
+        tools:layout="@layout/fragment_menu" >
+        <action
+            android:id="@+id/action_menuFragment_to_mainFragment"
+            app:destination="@id/mainFragment"
+            app:popUpTo="@id/mainFragment"
+            app:popUpToInclusive="true"/>
+        <action
+            android:id="@+id/action_menuFragment_to_garageFragment"
+            app:destination="@id/garageFragment" />
+        <action
+            android:id="@+id/action_menuFragment_to_boxesFragment"
+            app:destination="@id/boxesFragment" />
+        <action
+            android:id="@+id/action_menuFragment_to_fightFragment"
+            app:destination="@id/fightFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/garageFragment"
+        android:name="com.example.zorana.cats.fragments.GarageFragment"
+        android:label="fragment_garage"
+        tools:layout="@layout/fragment_garage" >
+        <action
+            android:id="@+id/action_garageFragment_to_menuFragment"
+            app:destination="@id/menuFragment"
+            app:popUpTo="@id/menuFragment"
+            app:popUpToInclusive="true"/>
+    </fragment>
+    <fragment
+        android:id="@+id/boxesFragment"
+        android:name="com.example.zorana.cats.fragments.BoxesFragment"
+        android:label="fragment_boxes"
+        tools:layout="@layout/fragment_boxes" >
+        <action
+            android:id="@+id/action_boxesFragment_to_menuFragment"
+            app:destination="@id/menuFragment"
+            app:popUpTo="@id/menuFragment"
+            app:popUpToInclusive="true"/>
+    </fragment>
+    <fragment
+        android:id="@+id/fightFragment"
+        android:name="com.example.zorana.cats.fragments.FightFragment"
+        android:label="fragment_fight"
+        tools:layout="@layout/fragment_fight" >
+        <action
+            android:id="@+id/action_fightFragment_to_menuFragment"
+            app:destination="@id/menuFragment"
+            app:popUpTo="@id/menuFragment"
+            app:popUpToInclusive="true"/>
+    </fragment>
+</navigation>
